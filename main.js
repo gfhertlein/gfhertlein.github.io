@@ -35,18 +35,18 @@ $(function() {
 /*
 set the table of the predictions 
 */
-function setTable(top5, probs) {
-    //loop over the predictions 
-    for (var i = 0; i < top5.length; i++) {
-        let sym = document.getElementById('sym' + (i + 1))
-        let prob = document.getElementById('prob' + (i + 1))
-        sym.innerHTML = top5[i]
-        prob.innerHTML = Math.round(probs[i] * 100)
-    }
-    //create the pie 
-    createPie(".pieID.legend", ".pieID.pie");
-
-}
+//function setTable(top5, probs) {
+//    //loop over the predictions 
+//    for (var i = 0; i < top5.length; i++) {
+//        let sym = document.getElementById('sym' + (i + 1))
+//        let prob = document.getElementById('prob' + (i + 1))
+//        sym.innerHTML = top5[i]
+//        prob.innerHTML = Math.round(probs[i] * 100)
+//    }
+//    //create the pie 
+//    createPie(".pieID.legend", ".pieID.pie");
+//
+//}
 
 /*
 record the current drawing coordinates
@@ -99,8 +99,7 @@ function getImageData() {
 
         //get image data according to dpi 
         const dpi = window.devicePixelRatio
-        const imgData = canvas.contextContainer.getImageData(mbb.min.x * dpi, mbb.min.y * dpi,
-                                                      (mbb.max.x - mbb.min.x) * dpi, (mbb.max.y - mbb.min.y) * dpi);
+        const imgData = canvas.contextContainer.getImageData(mbb.min.x * dpi, mbb.min.y * dpi, (mbb.max.x - mbb.min.x) * dpi, (mbb.max.y - mbb.min.y) * dpi);
         return imgData
     }
 
